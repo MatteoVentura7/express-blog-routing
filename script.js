@@ -8,44 +8,40 @@ app.get('/', (req, res) => {
   res.send('Server del mio Blog')
 })
 
+// INDEX 
+
 app.get('/bacheca', (req, res) => {
-    res.json([
-        {
-            title: "Ciambellone",
-            content: "Ricetta ciambellone",
-            image: `http://localhost:${port}/img/ciambellone.jpeg`,
-            tags: ["uova", "farina", "latte"]
-          },
+    res.send('Lista dei post')
+})
 
-          {
-            title: "Cracker",
-            content: "Ricetta cracker alla barbabietola",
-            image: `http://localhost:${port}/img/cracker_barbabietola.jpeg`,
-            tags: ["acqua", "farina", "barbabietola"]
-          },
+// SHOW
 
-          {
-            title: "Pane fritto",
-            content: "Ricetta pane fritto dolce",
-            image: `http://localhost:${port}/img/pane_fritto_dolce.jpeg`,
-            tags: ["uova", "pane", "zucchero"]
-          },
+app.get('/bacheca/:id', (req, res) => {
+  res.send(`Dettagli del post : ${req.params.id}`)
+})
 
-          {
-            title: "Pasta",
-            content: "Ricetta pasta alla barbabietola",
-            image: `http://localhost:${port}/img/pasta_barbabietola.jpeg`,
-            tags: ["pasta", "barbabietola", "olio"]
-          },
+// CREATE
 
-          {
-            title: "Torta",
-            content: "Ricetta torta paesana",
-            image: `http://localhost:${port}/img/torta_paesana.jpeg`,
-            tags: ["uova", "farina", "latte", "cioccolato"]
-          }
-         
-    ])
+app.post('/bacheca', (req, res) => {
+  res.send('Crea nuovo post')
+})
+
+// UPTADE
+
+app.put('/bacheca/:id', (req, res) => {
+  res.send(`Modifica del post : ${req.params.id}`)
+})
+
+// MODIFY 
+
+app.patch('/bacheca/:id', (req, res) => {
+  res.send(`Modifica parziale del post : ${req.params.id}`)
+})
+
+// DELETE
+
+app.delete('/bacheca/:id', (req, res) => {
+  res.send(`Eliminazione del post : ${req.params.id}`)
 })
 
 app.listen(port, () => {
