@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 // SHOW
 
-router.get('//:id', (req, res) => {
+router.get('/:id', (req, res) => {
   res.send(`Dettagli del post : ${req.params.id}`)
 })
 
@@ -22,19 +22,19 @@ router.post('/', (req, res) => {
 
 // UPTADE
 
-router.put('//:id', (req, res) => {
+router.put('/:id', (req, res) => {
   res.send(`Modifica del post : ${req.params.id}`)
 })
 
 // MODIFY 
 
-router.patch('//:id', (req, res) => {
+router.patch('/:id', (req, res) => {
   res.send(`Modifica parziale del post : ${req.params.id}`)
 })
 
 // DELETE
 
-router.delete('//:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   res.send(`Eliminazione del post : ${req.params.id}`)
 })
 
