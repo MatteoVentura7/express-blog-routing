@@ -1,4 +1,4 @@
-const bacheca =
+const post =
 [
     {
         title: "Ciambellone",
@@ -37,4 +37,4 @@ const bacheca =
      
 ]
 
-module.exports = bacheca
+module.exports = post
